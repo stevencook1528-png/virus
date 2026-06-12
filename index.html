@@ -3,52 +3,53 @@ html
 <html>  
 <head>  
     <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Security Alert</title>  
     <style>  
         * { margin: 0; padding: 0; }  
         body {  
             background: #000;  
-            min-height: 100vh;  
             display: flex;  
             align-items: center;  
             justify-content: center;  
+            min-height: 100vh;  
             font-family: -apple-system, sans-serif;  
         }  
-        .alert {  
-            width: 320px;  
-            background: rgba(255,255,255,0.96);  
+        .box {  
+            width: 310px;  
+            background: white;  
             border-radius: 20px;  
-            padding: 28px 22px 18px;  
+            padding: 28px 20px 18px;  
             text-align: center;  
         }  
-        .icon {  
-            width: 58px; height: 58px;  
+        .red-icon {  
+            width: 56px;  
+            height: 56px;  
             background: #FF3B30;  
             border-radius: 14px;  
+            margin: 0 auto 14px;  
             display: flex;  
             align-items: center;  
             justify-content: center;  
-            margin: 0 auto 16px;  
         }  
-        .icon svg { width: 34px; height: 34px; fill: white; }  
-        h2 { font-size: 18px; color: #000; margin-bottom: 4px; }  
-        .red { font-size: 14px; color: #FF3B30; font-weight: 600; margin-bottom: 10px; }  
-        p { font-size: 13.5px; color: #333; margin-bottom: 10px; line-height: 1.5; }  
-        .phone {  
+        .red-icon svg { width: 32px; height: 32px; fill: white; }  
+        h2 { font-size: 18px; color: #000; margin-bottom: 2px; }  
+        .tag { font-size: 14px; color: #FF3B30; font-weight: 600; margin-bottom: 8px; }  
+        p { font-size: 13.5px; color: #333; line-height: 1.5; margin-bottom: 8px; }  
+        .number {  
             background: rgba(255,59,48,0.08);  
-            border: 1px solid rgba(255,59,48,0.2);  
+            border: 1px solid rgba(255,59,48,0.15);  
             border-radius: 10px;  
             padding: 10px;  
-            margin: 6px auto 12px;  
-            font-size: 18px;  
+            display: inline-block;  
+            margin: 4px auto 10px;  
+            font-size: 20px;  
             font-weight: 700;  
             color: #FF3B30;  
         }  
-        .phone small { font-size: 13px; color: #888; display: block; font-weight: 400; }  
-        hr { border: none; height: 0.5px; background: #ddd; margin: 12px 0 8px; }  
-        .buttons { display: flex; gap: 8px; margin-top: 4px; }  
-        .buttons button {  
+        .number span { font-size: 12px; color: #888; display: block; font-weight: 400; }  
+        hr { border: 0; height: 1px; background: #ddd; margin: 10px 0 8px; }  
+        .row { display: flex; gap: 8px; }  
+        .row button {  
             flex: 1;  
             padding: 14px;  
             border: none;  
@@ -58,11 +59,25 @@ html
             cursor: pointer;  
         }  
         .fix { background: #FF3B30; color: white; }  
-        .ignore { background: #eee; color: #007AFF; }  
-        .foot { font-size: 11px; color: #888; margin-top: 14px; }  
+        .no { background: #eee; color: #007AFF; }  
+        .note { font-size: 11px; color: #888; margin-top: 14px; }  
     </style>  
 </head>  
 <body>  
-    <div class="alert">  
-        <div class="icon">  
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-
+    <div class="box">  
+        <div class="red-icon">  
+            <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>  
+        </div>  
+        <h2>Security Alert</h2>  
+        <div class="tag">⚠️ VIRUS DETECTED</div>  
+        <p><strong>Your device has been compromised.</strong> A malware infection was detected affecting system security.</p>  
+        <div class="number">  
+            (555) 123-4567  
+            <span>Call Apple Support Immediately</span>  
+        </div>  
+        <hr>  
+        <div class="row">  
+            <button class="fix">Fix Now</button>  
+            <button class="no">Ignore</button>  
+        </div>  
+        <div class="note">Apple iOS Security
