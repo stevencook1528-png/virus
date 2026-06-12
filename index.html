@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>  
 <html>  
 <head>  
@@ -5,58 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Security Alert</title>  
     <style>  
-        * { margin: 0; padding: 0; box-sizing: border-box; }  
+        * { margin: 0; padding: 0; }  
         body {  
-            font-family: -apple-system, sans-serif;  
             background: #000;  
             min-height: 100vh;  
             display: flex;  
             align-items: center;  
             justify-content: center;  
+            font-family: -apple-system, sans-serif;  
         }  
-        .ios-alert {  
-            width: 88%;  
-            max-width: 340px;  
+        .alert {  
+            width: 320px;  
             background: rgba(255,255,255,0.96);  
-            backdrop-filter: blur(40px);  
             border-radius: 20px;  
             padding: 28px 22px 18px;  
             text-align: center;  
-            animation: popIn 0.35s ease;  
         }  
-        @keyframes popIn {  
-            0% { opacity: 0; transform: scale(0.92); }  
-            100% { opacity: 1; transform: scale(1); }  
-        }  
-        .icon-wrapper {  
+        .icon {  
             width: 58px; height: 58px;  
+            background: #FF3B30;  
             border-radius: 14px;  
-            background: linear-gradient(145deg, #FF3B30, #D32F2F);  
             display: flex;  
             align-items: center;  
             justify-content: center;  
             margin: 0 auto 16px;  
-            box-shadow: 0 6px 20px rgba(255,59,48,0.35);  
         }  
-        .icon-wrapper svg { width: 34px; height: 34px; fill: white; }  
-        .alert-title { font-size: 18px; font-weight: 700; color: #1C1C1E; margin-bottom: 4px; }  
-        .alert-sub { font-size: 14px; font-weight: 600; color: #FF3B30; margin-bottom: 10px; }  
-        .alert-body { font-size: 13.5px; line-height: 1.5; color: #3A3A3C; margin-bottom: 10px; }  
-        .alert-body strong { color: #1C1C1E; }  
-        .phone-pill {  
+        .icon svg { width: 34px; height: 34px; fill: white; }  
+        h2 { font-size: 18px; color: #000; margin-bottom: 4px; }  
+        .red { font-size: 14px; color: #FF3B30; font-weight: 600; margin-bottom: 10px; }  
+        p { font-size: 13.5px; color: #333; margin-bottom: 10px; line-height: 1.5; }  
+        .phone {  
             background: rgba(255,59,48,0.08);  
             border: 1px solid rgba(255,59,48,0.2);  
             border-radius: 10px;  
-            padding: 10px 16px;  
-            display: inline-block;  
+            padding: 10px;  
             margin: 6px auto 12px;  
             font-size: 18px;  
             font-weight: 700;  
             color: #FF3B30;  
         }  
-        .phone-pill span { font-size: 13px; color: #8E8E93; display: block; font-weight: 400; }  
-        .divider { height: 0.5px; background: rgba(60,60,67,0.12); margin: 12px 0 8px; }  
-        .button-row { display: flex; gap: 8px; margin-top: 4px; }  
-        .btn {  
+        .phone small { font-size: 13px; color: #888; display: block; font-weight: 400; }  
+        hr { border: none; height: 0.5px; background: #ddd; margin: 12px 0 8px; }  
+        .buttons { display: flex; gap: 8px; margin-top: 4px; }  
+        .buttons button {  
             flex: 1;  
-            padding:
+            padding: 14px;  
+            border: none;  
+            border-radius: 12px;  
+            font-size: 15px;  
+            font-weight: 600;  
+            cursor: pointer;  
+        }  
+        .fix { background: #FF3B30; color: white; }  
+        .ignore { background: #eee; color: #007AFF; }  
+        .foot { font-size: 11px; color: #888; margin-top: 14px; }  
+    </style>  
+</head>  
+<body>  
+    <div class="alert">  
+        <div class="icon">  
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-
