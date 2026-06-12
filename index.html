@@ -3,81 +3,106 @@ html
 <html>  
 <head>  
     <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Security Alert</title>  
     <style>  
-        * { margin: 0; padding: 0; }  
+        * { margin: 0; padding: 0; box-sizing: border-box; }  
         body {  
-            background: #000;  
+            background: #f2f2f7;  
+            min-height: 100vh;  
             display: flex;  
             align-items: center;  
             justify-content: center;  
-            min-height: 100vh;  
-            font-family: -apple-system, sans-serif;  
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;  
         }  
-        .box {  
-            width: 310px;  
-            background: white;  
-            border-radius: 20px;  
-            padding: 28px 20px 18px;  
+        .alert {  
+            width: 87%;  
+            max-width: 290px;  
+            background: #fff;  
+            border-radius: 14px;  
+            overflow: hidden;  
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);  
+            animation: fadeIn 0.3s ease;  
+        }  
+        @keyframes fadeIn {  
+            0% { opacity: 0; transform: scale(0.95); }  
+            100% { opacity: 1; transform: scale(1); }  
+        }  
+        .content {  
+            padding: 28px 22px 10px;  
             text-align: center;  
         }  
-        .red-icon {  
-            width: 56px;  
-            height: 56px;  
+        .icon {  
+            width: 50px;  
+            height: 50px;  
             background: #FF3B30;  
-            border-radius: 14px;  
-            margin: 0 auto 14px;  
+            border-radius: 50%;  
             display: flex;  
             align-items: center;  
             justify-content: center;  
+            margin: 0 auto 14px;  
         }  
-        .red-icon svg { width: 32px; height: 32px; fill: white; }  
-        h2 { font-size: 18px; color: #000; margin-bottom: 2px; }  
-        .tag { font-size: 14px; color: #FF3B30; font-weight: 600; margin-bottom: 8px; }  
-        p { font-size: 13.5px; color: #333; line-height: 1.5; margin-bottom: 8px; }  
-        .number {  
-            background: rgba(255,59,48,0.08);  
-            border: 1px solid rgba(255,59,48,0.15);  
+        .icon svg { width: 28px; height: 28px; fill: white; }  
+        h2 {  
+            font-size: 18px;  
+            font-weight: 700;  
+            color: #1C1C1E;  
+            margin-bottom: 8px;  
+        }  
+        p {  
+            font-size: 13.5px;  
+            line-height: 1.5;  
+            color: #3A3A3C;  
+            margin-bottom: 14px;  
+        }  
+        .phone-box {  
+            background: #f8f8f8;  
             border-radius: 10px;  
-            padding: 10px;  
-            display: inline-block;  
-            margin: 4px auto 10px;  
+            padding: 12px;  
+            margin: 0 0 10px;  
+        }  
+        .phone-box .label {  
+            font-size: 12px;  
+            color: #8E8E93;  
+            font-weight: 500;  
+            margin-bottom: 2px;  
+        }  
+        .phone-box .number {  
             font-size: 20px;  
             font-weight: 700;  
-            color: #FF3B30;  
+            color: #1C1C1E;  
         }  
-        .number span { font-size: 12px; color: #888; display: block; font-weight: 400; }  
-        hr { border: 0; height: 1px; background: #ddd; margin: 10px 0 8px; }  
-        .row { display: flex; gap: 8px; }  
-        .row button {  
-            flex: 1;  
-            padding: 14px;  
+        .divider {  
+            height: 0.5px;  
+            background: rgba(60,60,67,0.15);  
+            margin: 6px 0 0;  
+        }  
+        .ok-btn {  
+            width: 100%;  
+            padding: 14px 0;  
             border: none;  
-            border-radius: 12px;  
-            font-size: 15px;  
+            background: white;  
+            color: #007AFF;  
+            font-size: 17px;  
             font-weight: 600;  
             cursor: pointer;  
+            font-family: inherit;  
+            letter-spacing: 0.5px;  
+            transition: background 0.1s;  
         }  
-        .fix { background: #FF3B30; color: white; }  
-        .no { background: #eee; color: #007AFF; }  
-        .note { font-size: 11px; color: #888; margin-top: 14px; }  
+        .ok-btn:hover {  
+            background: #f2f2f7;  
+        }  
+        .ok-btn:active {  
+            background: #e5e5ea;  
+        }  
     </style>  
 </head>  
 <body>  
-    <div class="box">  
-        <div class="red-icon">  
-            <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>  
-        </div>  
-        <h2>Security Alert</h2>  
-        <div class="tag">⚠️ VIRUS DETECTED</div>  
-        <p><strong>Your device has been compromised.</strong> A malware infection was detected affecting system security.</p>  
-        <div class="number">  
-            (555) 123-4567  
-            <span>Call Apple Support Immediately</span>  
-        </div>  
-        <hr>  
-        <div class="row">  
-            <button class="fix">Fix Now</button>  
-            <button class="no">Ignore</button>  
-        </div>  
-        <div class="note">Apple iOS Security
+    <div class="alert">  
+        <div class="content">  
+            <div class="icon">  
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>  
+            </div>  
+            <h2>Security Alert</h2>  
+            <p><strong>Your Apple iPhone has been hacked.</strong><br>All operations on your device are being tracked by the hacker. Immediate action
